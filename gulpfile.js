@@ -18,6 +18,7 @@ gulp.task("scssBuild", () => {
     .src("./src/scss/index.scss")
     .pipe(sass())
     .pipe(autoprefixer())
+    .pipe(concat("style.min.css"))
     .pipe(cleanCSS({ compatibility: "ie8" }))
     .pipe(gulp.dest("./dist/css"));
 });
